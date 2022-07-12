@@ -79,7 +79,7 @@ Using the Mobile first approach is better solution.
 16. Define semantic markup. What are the semantic meanings
     for <section>, <article>, <aside>, <nav>, <header>, <footer> and when/how should each be used in structuring html markup?
 
-        <header>  - element on the website that is repeated on each page, if this tag wasn’t inside the main tag. In general its position at the top of the page
+<header>  - element on the website that is repeated on each page, if this tag wasn’t inside the main tag. In general its position at the top of the page
 
 <footer>  - element on the website that is repeated on each page, if this tag wasn’t inside the main tag. In general its position at the bottom of the page
 
