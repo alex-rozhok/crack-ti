@@ -1,0 +1,497 @@
+HTML
+
+1.  What is Critical Rendering Path?
+    It’s how the browser reads HTML document, CSS and JS files and renders page on the screen. In order to optimize this process you should first include all necessary data (styles, font, etc.) for elements that client see first to avoid changing the element.
+
+2.  What is the DOM? How does the DOM work?
+    Document object model is created when the browser reads a page. It includes all data and structure from the page and allows you to manipulate (add, remove, change, read some property) using programming languages like JS.
+
+3.  Explain the difference between layout, painting and compositing?
+
+        layout => painting => compositing
+
+    Layout - definition how much space takes every element and its position
+    Painting - drawing text, shadow, border etc. It’s pixel filling process.
+    Compositing - It’s process of drawing elements in correct order.
+
+When you change some property, for example size properties or position, after that browser will call the painting and compositing process.
+
+Changing painting value only, browser skips the layout process and call painting and composition
+
+4. What are the Benefits of Server Side Rendering (SSR) Over Client Side Rendering (CSR)?
+
+SEO friendly
+better performance for the client
+
+5. How can I get indexed better by search engines?
+
+using right site structure
+using semantic tags
+using meta tags (title, keywords, description)
+writing informative content
+page speed optimization
+
+6. Ways to improve website performance
+
+optimize image size
+page speed optimization
+using reusable code
+use CDN
+use file minification
+write mobile-first code
+
+7. What does async and defer refer in script tag? Describe the difference between <script>, <script async> and <script defer>
+   When the browser reads html document and find script tag, it stops reading other part of document until it reads and execute js file. Attribute defer on the tag script doesn’t block reading html document and executes it after the DOM was built.
+   Script with async attribute it’s independence tag. It also doesn’t block reading document. Async script applied when we add some third-party script like some ads.
+
+8. What is desktop first and mobile first design approach?
+
+Desktop first approach means we write code according to desktop design and after that we use media query to write styles for the mobile devices. Using Mobile first approach we write design for mobile view first and add media query to change elements for bigger screen.
+Using the Mobile first approach is better solution.
+
+9.  How to make page responsive?
+    Using relative values instead of absolute values and media queries.
+
+10. What are the building blocks of HTML5?
+    tag, attribute, content
+
+11. What is difference between Select and Datalist?
+
+    Using select user can choose only items from dropdown list. In the datalist user also can pick option from dropdown or write custom value. When you enter a custom value, the options in the list are filtered according to the entered value.
+
+12. What are the semantic tags available in html5?
+    header, footer, main, nav, section, article, aside, figure.
+
+13. Why you would like to use semantic tag?
+
+    Semantic tags are more informative, using them is better for understanding what content inside each tag, also it helpful for developing a11y page.
+
+14. What is accessibility? ARIA role means in a web application
+
+        A11Y means to write web page that users with disabilities will be able to use all functionality completely. It means you have to use some aria attributes to help users with poor hearing listen your page through screen reader. Also all features on your page should be accessible using only the keyboard. Page flow should be simple and understandable.
+
+    From my experience I can say that using semantic tags it’s bigger part to write accessible page.
+
+15. What is the purpose of the alt attribute on images?
+
+    If the image doesn’t display the user will see the alternative text, screen reader reads the alt for users with poor vision. Also alt is necessary for search robots.
+
+16. Define semantic markup. What are the semantic meanings
+    for <section>, <article>, <aside>, <nav>, <header>, <footer> and when/how should each be used in structuring html markup?
+
+        <header>  - element on the website that is repeated on each page, if this tag wasn’t inside the main tag. In general its position at the top of the page
+
+<footer>  - element on the website that is repeated on each page, if this tag wasn’t inside the main tag. In general its position at the bottom of the page
+
+<nav> - this tag includes site navigation
+
+<aside> - content on the site is indirectly related to the main. It can be like additional nav links.
+
+<section> - content inside related semantically
+
+<article> - content inside related semantically and if you can move this to other place and this still makes sense
+
+17. When should you use section, div or article?
+
+If you need use block element only as container for css styles - use div.
+If content inside the block related semantically and can be independent from other elements on the page - use article. For other cases use section.
+
+18. What is an iframe and how it works?
+
+Using iframe you can show content from third-party page. You can’t do any manipulation into this page, only set size and position for iframe block.
+
+19. Describe the difference between a cookie, sessionStorage and localStorage?
+    LocalStorage and sessionStorage both have 5mb memory, cookie has 4kb.
+    SessionStorage keeps information only in one browser tab and loses after it closed. LocalStorage can keep data forever until it’s cleared. For cookie you can set time for keeping data
+
+20. What does CORS stand for and what issue does it address?
+    The Security mechanism that allows web pages to get data from other domain.
+
+CSS
+
+What are the possible ways to apply CSS styles to a web page?
+inline styles - to each element as attribute
+embedded - using tag <style> within HTML document
+linked - use tag link in head of the HTML document
+
+2. What does the cascading portion of CSS mean?
+
+   When two or more rules with the same selector weight has some different values the html element applies what will be written later
+
+3. New features in CSS3
+
+gradient, animation, transition, calc,
+
+4. What are the css selectors?
+
+   Set of elements to which should be applied styles
+
+5. What is the difference between Pseudo-classes and pseudo-elements?
+   Pseudo-classes apply to state of element (hover, focus, nth-child).
+   Pseudo-elements used to select virtual element (before, after, first-letter)
+
+6. What is the difference between class selectors and id selectors?
+
+   Id Selectors has more weight: id - 100, class - 10. (But it’s conditional value, you can’t apply 10 classes for one selector instead 1id, for this you have to write 256 classes.)
+
+7. What is the difference between the “nth-child()” and “nth-of-type()” selectors?
+
+nth-child() applies styles to elements only according to their order, nth-of-type() according to their order and type of element (tag).
+
+8. Explain CSS grid layout with example
+
+   Grid container has grid elements inside. Using some property you can align elements in a row or column, set gaps between elements.
+
+9. What is CSS flexbox?
+   Flexbox container has flexbox items inside. You can use two directions - row and column and align flexbox items along these two axes
+
+10. When to use css grid and flexbox?
+
+    It helps to create responsive layout when you need to put two or more block elements in the row
+
+11. What is CSS BEM?
+
+    It’s method how to name CSS classes for elements to write clean CSS. Block - Element - Modifier.
+
+12. How do you specify units in the CSS?
+
+relative units: %, rem, em, vw, vh, vmax, vmin
+absolute units: px, pt, mm, cm, s
+
+14. Explain the CSS “box model” and the layout components that it consists of
+
+Box model consist of: margin, border, padding and content.
+
+15. What is CSS preprocessor?
+
+    It’s the program that compiles css code from their own syntax. Using preprocessor like Less or SASS and etc. makes it easier to work with style’s files
+
+16. What are media queries?
+
+    It's an opportunity to write some styles only for special conditional (screen width, print etc.)
+
+17. What does box-sizing do?
+
+    Allow you to control how browsers should calculate an element's width or height. By default, padding and border values ​​are not included in the specified width and height of the element. Use border-box value to change it.
+
+18. Explain some pros and cons for CSS animations versus JavaScript animations
+
+    Simple animations simpler to write using CSS animation, when you need more difficult animation logic and calculation - use JS
+
+JS
+
+What are primitive data types?
+number, string, null, undefined, boolean, Symbol, BigInt
+
+What are the possible ways to create objects in JavaScript?
+
+object literals: const obj = {}
+new Object
+using constructor function
+using class
+
+3. What is undefined property?
+
+   type of data when you call variable that hasn’t been assigned or result of function which return nothing
+
+4. What is null value?
+
+   It’s falsy type of data, that value set a developer
+
+5. What is the difference between null and undefined?
+
+undefined we receive from program, null we set ourselves
+
+6. What is the difference between window and document?
+
+   window - it’s global object that contains global methods and variables (created using var) and the document.
+
+   document - it’s your html document that contains other elements on the page and method to navigate through it
+
+7. What is isNaN?
+
+Not a number - result of some operations when we apply math method to not number types
+
+8. What is the difference between let, const and var?
+
+var - have global scope. let and cons have block scope.
+
+Hoisting: you can call var variables before declaration without error, if you try to do it with let or const you will receive an error.
+
+You can’t change value in a const variables
+
+9. What are the differences between undeclared and undefined variables?
+
+Undefined variables it’s variable that has no value. Undeclared it’s variable that hasn’t been created
+
+10. What are global variables?
+
+The variables that you can get access everywhere 11. What are the problems with global variables?
+
+    Very easy to rewrite variable’s value
+
+12. What is NaN property?
+
+Not a number - result of some operations when we apply math method to not number types
+
+13. What are classes in ES6?
+
+    constructor to create objects
+
+14. How do you check whether a string contains a substring?
+
+string.indexOf(substring) => index | -1
+string.lastIndexOf(substring) => index | -1
+string.includes(substring) => boolean
+new RegExp(substring).test(string) => boolean
+
+15. How do you check if a key exists in an object?
+
+        ‘key’ in obj    => boolean
+        obj.key = value | undefined
+        obj[‘key’] = value | undefined
+
+16. How do you copy properties from one object to other?
+
+target= obj
+target = {…obj}
+object.assign(target, obj)
+
+17. What is a proxy object?
+
+It’s object allows you to catch and change some methods other objects
+
+18. What is the main difference between Object.values and Object.entries method?
+
+Object.values returns array of object’s values
+Object.entries return array of arrays of object’s keys and values
+
+19. How can you get the list of keys of any object?
+
+    Object.keys() or use for in loop
+
+20. How do you create an object with prototype?
+
+Object.setPrototypeOf(obj, protObj)
+
+const obj = Object.create(protObj)
+
+21. What is a WeakSet?
+
+    WeakSet can only contain objects, and the objects it contains may be garbage collected.
+
+22. What are the differences between WeakSet and Set?
+    Set can contains any type
+    WeakSet has only add, has, delete methods compared to Set that has more methods
+
+23. What is a WeakMap?
+    It’s collection of key-value, keys must be objects
+24. What are the differences between WeakMap and Map?
+
+    WeakMap keys must be only objects. WeakMap has less methods than Map
+
+25. What is Hoisting?
+
+    It’s process moves all declaration on the top and allows you to call function or variables (declared through var) before their declaration
+
+26. How do you assign default values to variables?
+
+        for example: const someVar = value || defaultValue;
+
+    If we receive falthy value, someVar will take defaultValue
+    for function’s arguments we can use next: (arg = defaultArf) => arg
+
+Context, Scope proto and Prototype
+
+1. What is the difference between Call, Apply and Bind?
+
+   Call and Apply take the context and call function
+   Bind only take a context. To run this function you need to call it.
+
+   apply take function’s arguments as array
+
+2. What is scope in javascript?
+   It’s area of visibility to variables and functions. Variables can be visible only their scope and below
+
+3. What is prototype chain?
+
+   When you call some object’s property which isn’t exist, this property will be called from object’s prototype and other prototypes above
+
+JSON
+
+1. What is JSON and its common operations?
+   It’s JS object represented in string format. Using for transferring data from server to client and from client to server
+
+2. How do you parse JSON string?
+
+   JSON.parse(string) - string it’s object in a string format
+
+3. Why do you need JSON?
+   To transfer data to different technology
+
+4. What is the purpose JSON stringify?
+   To convert our object to string format
+
+5. How do you define JSON arrays?
+   They values separated by comma and have array brackets [] instead object brackets {}
+
+Array methods
+
+1. What is the purpose of the array slice method?
+   To get some part of the array. It doesn’t modify original array
+
+2. What is the purpose of the array splice method?
+   Modify original array: cut some values or add new values. This method returns values that was removed from original array
+
+3. What array methods do you know?
+   slice, splice, reverse, join, length, push, pop, shift, unshift, forEach, map, filter, reduce, every, any, find, includes, indexOf
+
+4. What is the difference between Array.forEach() and Array.map()?
+
+   Both of them run the loop, but only map returns a new array. forEach returns nothing
+
+Functions
+
+1.  What are lambda or arrow functions?
+    New type of function, we don’t need to write functions keyword to create it, it’s enough to use arrow =>. This functions don’t have an arguments object. And don’t get call context
+
+2.  What is a first class function?
+    These functions can be passed to other functions or return from other functions and assign it to other variables
+
+3.  What is a higher order function?
+    It’s function that get other function as argument or return other function
+
+4.  What is a unary function?
+    Is it like this: +value, value++?
+
+5.  What is the currying function?
+    It’s way to reformat one function with several arguments to several functions with one arguments
+
+6.  What is a pure function?
+    It’s function that always returns the same result when get the same parameters and don’t have any side effects
+
+7.  What are closures?
+
+        Function opportunity to access variables from parent function
+
+8.  What is IIFE(Immediately Invoked Function Expression)?
+
+This is function that is called right after creation
+
+9.  What is a callback function?
+    It’s a function that is passed to the other function as argument
+
+10. What is an anonymous function?
+
+    Functions that have no any name id. This function can be passed like callback to other function or returned from one. Often used as second argument in addEventListener
+
+Async JavaScript
+
+1. What is a promise?
+
+   It’s opportunity to wait for execution asynchronous operation and then operate with that data
+
+2. Why do you need a promise?
+
+   It allows easier work with asynchronous operations and catch errors avoid callback hell
+
+3. What are the three states of promise?
+   pending: waiting for result
+   fulfilled: have a success result
+   rejected: get some error
+
+4. Why do we need callbacks?
+
+   To execute callback function after executing another actions
+
+5. What is a callback hell?
+
+   It’s a lot nested callback functions
+
+6. What is promise chaining?
+
+   When you need to call several functions one by one in some order
+
+7. What is promise.all?
+
+   You can call more than one async request and get result after all of them have been completed
+
+8. What is the purpose of race method in promise?
+   It get array of promises and return first completed promise (resolve or reject)
+
+9. What is the use of setTimeout?
+   You can set delay for execution functions
+
+10. What is the use of setInterval?
+
+    Repeat code after given time
+
+11. What is an event loop?
+
+    It’s process to track call stack and callback queue. When call stack is empty event loop take function from queue and put in call stack to execute
+
+12. What is call stack?
+
+    It’s mechanism to track execution of functions
+
+Common
+
+1. What is a strict mode in javascript?
+
+   This mode catches some common mistakes when you write code and log it. For example you can’t use undeclared variables in strict mode.
+
+2. What are PWAs?
+
+   It’s web page with similar functionality like mobile apps
+
+3. How do you validate an email in javascript?
+
+   Write regular expression that has pattern with some key symbols
+
+4. How do you get the current url with javascript?
+
+   Use global object window and its property location => href
+
+5. What is tree shaking?
+
+   It’s about import only necessary functions from modules
+
+6. What is memoization?
+
+   It’s technique to create cache store for functions that allows you to get result without calculations if you put a parameters which used before
+
+7. What are modules?
+
+   These are files with code that we can use in other files and avoid rewriting it
+
+8. Why do you need modules?
+
+   To avoid code duplication
+
+9. How do you detect a mobile browser?
+
+   apply window.navigator.userAgentData
+
+10. How do you detect javascript disabled in the page?
+
+    Use HTML tag noscript which shows only when JS disabled
+
+11. What is a rest parameter?
+
+    Syntax allows to get unlimited amount of arguments into an array
+
+12. What is a spread operator?
+
+    Syntax allows you to put all properties from object or array into a new object or array
+
+13. How do you encode an URL?
+
+Replace unsafe ASCII characters to allowed
+
+14. How do you decode an URL?
+
+    reverse process from encode
+
+15. What is nodejs?
+
+    It’s environment to write server code using JS
